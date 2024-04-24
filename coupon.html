@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coupon Code </title>
+  <!--=====================================-->
+                                        <!--=     COUPON CODE Section START    =-->
+                                        <!--=====================================-->
+                                        
+                                        <div>
+                                          <style>
+                                              body {
+                                                font-family: Arial, sans-serif;
+                                                margin: 20px;
+                                              }
+                                          
+                                          
+                                              label {
+                                                display: block;
+                                                margin-bottom: 5px;
+                                                color: #333;
+                                              }
+                                          
+                                              input {
+                                                width: 100%;
+                                                padding: 10px;
+                                                margin-bottom: 10px;
+                                                box-sizing: border-box;
+                                                border: 1px solid #ccc;
+                                                border-radius: 5px;
+                                                font-size: 14px;
+                                              }
+                                          
+                                              button {
+                                                  width: 100%;
+                                                padding: 10px;
+                                                cursor: pointer;
+                                                background-color: #4caf50;
+                                                color: #fff;
+                                                border: none;
+                                                border-radius: 5px;
+                                                font-size: 14px;
+                                              }
+                                          
+                                              .price-section {
+                                                margin-top: 10px;
+                                                margin-bottom: -10px;
+                                              }
+                                          
+                                              .strike-price {
+                                                color: #999;
+                                                text-decoration: line-through;
+                                              }
+                                          
+                                              .discounted-price {
+                                                color: #e44d26; /* Change the color as needed */
+                                                font-size: 16px;
+                                                font-weight: bold;
+                                              }
+                                          
+                                              .feedback-message {
+                                                margin-top: 10px;
+                                                margin-bottom: -10px;
+                                                font-size: 14px;
+                                                color: #e44d26; /* Change the color as needed */
+                                              }
+                                            </style>
+                                          </head>
+                                          <body>
+                                          
+                                              <label for="couponCode"><b>Coupon Code:</b></label>
+                                              <input type="text" id="couponCode" placeholder="Enter coupon code"><br>
+                                              <button onclick="applyCoupon()">Apply Coupon</button>
+                                            
+                                              <div class="price-section">
+                                                <p class="feedback-message" id="feedbackMessage"></p>
+                                              </div>
+                                            </div>
+                                          
+                                            <script>
+                                              function applyCoupon() {
+                                                var couponCode = document.getElementById("couponCode").value;
+                                                var discountAmount = getDiscountAmount(couponCode);
+                                                var originalPrice = 5999.00; // Set your original product price here
+                                          
+                                                if (discountAmount > 0) {
+                                                  var discountedPrice = originalPrice - discountAmount;
+                                                  document.getElementById("feedbackMessage").innerText = "Coupon applied successfully! Discounted Price:  ₹" + discountAmount;
+                                                } else {
+                                                  document.getElementById("feedbackMessage").innerText = "Invalid coupon code. Please try again.";
+                                                }
+                                              }
+                                          
+                                              function getDiscountAmount(couponCode) {
+                                                // Simulate server-side validation. Replace this with your server-side logic.
+                                                var validCouponCodes = {
+                                                  "GET2999": 2999,
+                                                  // Add more coupon codes and their corresponding discounts as needed
+                                                };
+                                          
+                                                return validCouponCodes[couponCode] || 0;
+                                              }
+                                            </script>
+                                          
+                                          </body>
+                                      </div>
+
+                                      <!--=====================================-->
+                                      <!--=     COUPON CODE Section END    =-->
+                                      <!--=====================================-->
+</html>
